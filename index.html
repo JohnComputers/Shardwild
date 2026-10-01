@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="theme-color" content="#10151d" />
+<title>Shardwild</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="game"></div>
+<section id="titleScreen" class="screen show">
+  <div class="hero"><div class="rune">◆</div><h1>SHARDWILD</h1><p>Survive the Reach. Descend through Cinder. Break the Hollow.</p></div>
+  <div class="title-card">
+    <div class="tabs"><button class="active" data-tab="worlds">Worlds</button><button data-tab="create">Create World</button></div>
+    <div id="worldsTab" class="tabpage"><div id="worldList"></div></div>
+    <div id="createTab" class="tabpage hidden">
+      <label>World name<input id="worldName" maxlength="28" value="New Wild" /></label>
+      <label>Seed<input id="worldSeed" placeholder="blank = random" /></label>
+      <label>Mode<select id="worldMode"><option value="survival">Survival</option><option value="creative">Creative</option></select></label>
+      <button id="createWorld" class="primary">Create & Enter</button>
+    </div>
+  </div>
+  <div class="footer">Original game prototype • no affiliation with Mojang or Minecraft</div>
+</section>
+
+<div id="hud" class="hidden">
+  <div id="crosshair"></div>
+  <div id="objective"></div>
+  <div id="message"></div>
+  <div id="debug" class="hidden"></div>
+  <div id="bossWrap" class="hidden"><div id="bossName">HOLLOW REGENT</div><div class="bossTrack"><div id="bossFill"></div></div><div id="bossState"></div></div>
+  <div id="vitals">
+    <div class="vital"><span>HP</span><div class="track"><i id="healthBar"></i></div><b id="healthText">20</b></div>
+    <div class="vital"><span>FOOD</span><div class="track"><i id="hungerBar"></i></div><b id="hungerText">20</b></div>
+    <div class="vital"><span>ARMOR</span><div class="track"><i id="armorBar"></i></div><b id="armorText">0</b></div>
+    <div class="xp"><div class="track"><i id="xpBar"></i></div><span id="xpText">Lv 0</span></div>
+  </div>
+  <div id="hotbar"></div>
+  <div id="mineProgress" class="hidden"><i></i></div>
+</div>
+
+<section id="pauseScreen" class="overlay hidden"><div class="modal small"><h2>Paused</h2><button id="resumeBtn" class="primary">Resume</button><button id="inventoryBtn">Inventory / Crafting</button><button id="settingsBtn">Settings</button><button id="saveQuitBtn">Save & Quit to Title</button></div></section>
+<section id="panel" class="overlay hidden"><div class="modal wide"><header><h2 id="panelTitle">Inventory</h2><button id="panelClose">×</button></header><div id="panelBody"></div></div></section>
+<section id="deathScreen" class="overlay hidden"><div class="modal small"><h2>You fell in the Wild</h2><p id="deathReason"></p><button id="respawnBtn" class="primary">Respawn</button><button id="deathQuitBtn">Save & Quit</button></div></section>
+<section id="victoryScreen" class="overlay hidden"><div class="modal victory"><div class="rune">◇</div><h2>THE HOLLOW BREAKS</h2><p>The Regent dissolves into the Aether. The three realms remain open, altered by your passage.</p><div class="credits">SHARDWILD<br><small>Design, code, procedural art & systems created for this project.<br>All names, visuals and gameplay assets are original.</small></div><button id="continueBtn" class="primary">Continue Sandbox</button></div></section>
+
+<script type="module" src="src/game.js"></script>
+</body>
+</html>

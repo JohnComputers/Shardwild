@@ -1,0 +1,12 @@
+{
+  "name": "shardwild",
+  "version": "0.9.0",
+  "private": true,
+  "type": "module",
+  "description": "Original browser voxel survival sandbox built for static hosting and GitHub Pages.",
+  "scripts": {
+    "test": "node tests/smoke.mjs",
+    "serve": "python -m http.server 8080"
+  },
+  "license": "MIT"
+}
